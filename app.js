@@ -28,10 +28,11 @@
 // getWords();
 
 function countdown(num, cb) {
-    setTimeout(function () {
+    let time = setInterval(function () {
         console.log(num);
         num--
-        if (num === 0) {
+        if (num <= 0) {
+            clearInterval(time);
             return cb();
         }
     }, 1000)
@@ -41,7 +42,7 @@ function done() {
     console.log('message in the console');
 }
 
-countdown(5000, done);
+countdown(10, done);
 
 //Promises
 
