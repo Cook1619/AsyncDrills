@@ -22,3 +22,15 @@ function getWords(){
     console.log('WordyWOrd');
 }
 getWords();
+
+function countdown(num, cb){
+    setTimeout(()=>{
+        cb();
+    }, num)
+}
+
+function done(){
+    console.log('message in the console');
+}
+
+countdown(5000,done);
