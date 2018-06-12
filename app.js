@@ -1,3 +1,5 @@
+//Async now and later
+
 let num;
 function message() {
     console.log("Hello");
@@ -10,6 +12,8 @@ function anotherMessage() {
     console.log(num * 4);
 }
 setTimeout(anotherMessage, 2000);
+
+//Callbacks
 
 function getWords() {
     console.log('Hello');
@@ -39,6 +43,8 @@ function done() {
 
 countdown(5000, done);
 
+//Promises
+
 let statement = true;
 let error = 'ERROR!!!!';
 orderChickenSandwich = () => {
@@ -55,9 +61,27 @@ orderChickenSandwich = () => {
     })
 }
 let orderFood = orderChickenSandwich();
-orderFood.then(function(resolve){
+orderFood.then(function (resolve) {
     console.log(resolve);
-}, (error) =>{
+}, (error) => {
     console.log(error)
 })
 
+//Chaining
+let number = 1;
+chainingPromises = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(function(){
+            resolve(number)
+        },2000)
+    }).then(function(res){
+        return res * 2;
+    }).then(function(res){
+        return res * 4;
+    }).then(function(res){
+        return res * 6;
+    }).then(function(res){
+        console.log(res);
+    });
+}
+chainingPromises();
