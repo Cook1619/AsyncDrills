@@ -5,3 +5,8 @@ function message(){
     return num;
 }
 message();
+
+function anotherMessage(){
+    console.log(num * 4);
+}
+setTimeout(anotherMessage, 2000);
