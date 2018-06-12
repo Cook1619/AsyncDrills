@@ -43,15 +43,21 @@ let statement = true;
 let error = 'ERROR!!!!';
 orderChickenSandwich = () => {
     return new Promise((resolve, reject) => {
-        if(statement === true){
+        if (statement === true) {
             let sandwich = {
                 sandwich: 'chicken',
                 veggies: 'lettuce'
             }
             resolve(sandwich);
-        }else{
+        } else {
             reject(error)
         }
     })
 }
+let orderFood = orderChickenSandwich();
+orderFood.then(function(resolve){
+    console.log(resolve);
+}, (error) =>{
+    console.log(error)
+})
 
