@@ -13,8 +13,12 @@
 
 function getWords(){
     console.log('Hello');
-    setTimeout(console.log('AnotherWord'), 2000);
-    setTimeout(console.log('ThirdWord'),0);
+    setTimeout(()=>{
+        console.log('SecondWord')
+    }, 2000)
+    setTimeout(()=> {
+        console.log('Covalance!!')
+    }, 0)
     console.log('WordyWOrd');
 }
 getWords();
