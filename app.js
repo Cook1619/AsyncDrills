@@ -81,10 +81,10 @@ chainingPromises = () => {
         setTimeout(() => console.log(res), 2000)
         return res * 4;
     }).then((res) => {
-        setInterval(() => console.log(res), 4000)
+        setTimeout(() => console.log(res), 4000)
         return res * 6;
     }).then((res) => {
-        setInterval(() => console.log(res), 6000);
+        setTimeout(() => console.log(res), 6000);
     });
 }
 chainingPromises();
