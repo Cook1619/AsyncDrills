@@ -24,12 +24,13 @@ function getWords() {
 getWords();
 
 function countdown(num, cb) {
-    for (let i = num; num < 0; i--) {
+    setTimeout(function () {
         console.log(num);
-    }
-    setTimeout(() => {
-        cb();
-    }, num)
+        num--
+        if (num === 0) {
+            return cb();
+        }
+    }, 1000)
 }
 
 function done() {
@@ -39,17 +40,18 @@ function done() {
 countdown(5000, done);
 
 let statement = true;
-
-let orderChickenSandwich = new Promise(function (resolve, reject) {
-    let food = {
-        sandwich: 'chicken',
-        veggies: 'veggies'
-    }
-    if (statement === true) {
-        resolve(food);
-    }
-    else {
-        reject(new Error('ERROR!!'));
-    }
-})
+let error = 'ERROR!!!!';
+orderChickenSandwich = () => {
+    return new Promise((resolve, reject) => {
+        if(statement === true){
+            let sandwich = {
+                sandwich: 'chicken',
+                veggies: 'lettuce'
+            }
+            resolve(sandwich);
+        }else{
+            reject(error)
+        }
+    })
+}
 
